@@ -1,13 +1,21 @@
 import React from "react";
 import avatar_post from "../../../../assets/images/avatar-post.jpg"
 import s from "./Post.module.css"
-export const Post = () => {
+
+type PropsType = {
+    message: string
+    like?: number
+}
+
+export const Post = (props: PropsType) => {
+    const {message, like} = props
     return (
         <div className={s.post}>
             <img src={avatar_post} alt="avatar post"/>
-            new post
+            {message}
             <div>
-                💟
+                {like}
+                <button>💟</button>
             </div>
         </div>
     );

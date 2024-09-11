@@ -5,7 +5,12 @@ export const MyPosts = () => {
     return (
         <div>
             My Posts
-            <Post/>
+            <div>
+                <textarea></textarea>
+                <button>add post</button>
+            </div>
+            <Post message={"Привет"} like={5}/>
+            <Post message={"Мой первый пост"} like={8}/>
         </div>
     );
 };
