@@ -5,13 +5,24 @@
 
 .nav li {
     list-style: none;
+    padding: 10px;
+
 }
 
 .nav a {
-    text-decoration: none;
-    color: black;
     font-size: 22px;
 }
+
+.default {
+    text-decoration: none;
+    color: white;
+}
+
 .nav a:hover {
     text-decoration: underline;
+}
+
+.active {
+    text-decoration: underline;
+    color: black;
 }

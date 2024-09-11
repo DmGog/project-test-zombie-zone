@@ -7,13 +7,25 @@ export const NavBar = () => {
     return (
         <nav className={s.nav}>
             <ul>
-                <li><NavLink to={PATH.PROFILE}>Profile</NavLink></li>
-                <li><NavLink to={PATH.MESSAGES}>Messages</NavLink></li>
-                <li><NavLink to={PATH.NEWS}>News</NavLink></li>
-                <li><NavLink to={PATH.MUSIC}>Music</NavLink></li>
-                <li><NavLink to={PATH.SETTINGS}>Settings</NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
+                             to={PATH.PROFILE}>Profile</NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
+                             to={PATH.MESSAGES}>Messages</NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
+                             to={PATH.NEWS}>News</NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
+                             to={PATH.MUSIC}>Music</NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
+                             to={PATH.SETTINGS}>Settings</NavLink></li>
             </ul>
         </nav>
     );
 };
 
+
+// <NavLink
+//     to="/dialogs"
+//     className={({ isActive }) => (isActive ? styles.act : styles.def)}
+// >
+//     Messages
+// </NavLink>
