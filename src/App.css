@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .app-wrapper {
     margin: 0 auto;
     max-width: 1140px;
@@ -13,22 +21,6 @@
     grid-gap: 10px;
 }
 
-.header {
-    grid-area: h;
-}
 
-.header img {
-    width: 80px;
-}
 
-.nav {
-    grid-area: n;
-}
 
-.content {
-    grid-area: c;
-}
-
-.content img {
-    width: 100%;
-}

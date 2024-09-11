@@ -1,9 +1,10 @@
 import React from "react";
-import logo from "./../access/logo.svg"
+import logo from "./../assets/logo.svg"
+import s from "./Header.module.css"
 
 export const Header = () => {
     return (
-        <header className={"header"}>
+        <header className={s.header}>
             <img
                 src={logo}
                 alt={"logo"}/>
