@@ -5,5 +5,13 @@
 
 .nav li {
     list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
     font-size: 22px;
+}
+.nav a:hover {
+    text-decoration: underline;
 }
