@@ -1,12 +1,13 @@
 import React from "react";
 import s from "./Profile.module.css"
+import main_img from "../../assets/images/main-profile.png"
 
 export const Profile = () => {
     return (
         <div className={s.content}>
             <div>
-                <img style={{width: "300px"}}
-                     src={"https://avatars.mds.yandex.net/i?id=a8e75f7304213baa13d84a6aaf5e19dc_l-8448647-images-thumbs&n=13"}/>
+                <img
+                    src={main_img}/>
             </div>
             <div>
                 <img style={{width: "300px"}}

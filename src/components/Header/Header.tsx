@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./../assets/logo.svg"
+import logo from "../../assets/logo.svg"
 import s from "./Header.module.css"
 
 export const Header = () => {
@@ -8,7 +8,10 @@ export const Header = () => {
             <img
                 src={logo}
                 alt={"logo"}/>
-            <span>ZombieGram</span>
+            <div className={s.text_wrapper}>
+                <span>social network</span>
+                <span>ZombieZone</span>
+            </div>
         </header>
     );
 };

@@ -1,0 +1,16 @@
+.header {
+    grid-area: h;
+    background-image: linear-gradient(47deg, rgba(255, 28, 69, 1) 0%, rgba(164, 67, 210, 1) 99%);
+    display: flex;
+}
+
+.header img {
+    width: 80px;
+}
+
+.text_wrapper {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+}

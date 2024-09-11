@@ -1,8 +1,9 @@
 .nav {
     grid-area: n;
-    background-color: yellow;
+    background-color: #f42156b5;
 }
 
 .nav li {
     list-style: none;
+    font-size: 22px;
 }
