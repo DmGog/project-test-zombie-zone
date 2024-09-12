@@ -1,0 +1,20 @@
+.posts {
+    padding: 5px;
+}
+
+.post_wrapper {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+}
+
+.button_post {
+    max-width: 100px;
+    width: 100%;
+}
+.button_wrapper{
+    text-align: end;
+}

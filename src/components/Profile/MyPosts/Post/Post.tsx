@@ -13,7 +13,7 @@ export const Post = (props: PropsType) => {
         <div className={s.post}>
             <img src={avatar_post} alt="avatar post"/>
             {message}
-            <div>
+            <div className={s.post_button}>
                 {like}
                 <button>💟</button>
             </div>
