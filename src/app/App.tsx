@@ -1,7 +1,7 @@
 import React from "react";
-import "./App.css"
-import {Header} from "./components/Header/Header";
-import {NavBar} from "./components/NavBar/NavBar";
+import "../App.css"
+import {Header} from "../components/Header/Header";
+import {NavBar} from "../components/NavBar/NavBar";
 import {Outlet} from "react-router-dom";
 
 function App() {

@@ -1,13 +1,13 @@
 import React from "react";
 import {Post} from "./Post/Post";
 import s from "./MyPosts.module.css"
+import {useSelector} from "react-redux";
+import {AppRootState} from "../../../app/store";
+import {PostType} from "../profile-reducer";
+
 
 export const MyPosts = () => {
-
-    const postData = [
-        {id: 1, message: "Привет", likesCount: 5},
-        {id: 2, message: "Мой первый пост", likesCount: 8},
-    ]
+    const postData = useSelector<AppRootState, PostType[]>(state => state.posts)
 
     return (
         <div className={s.posts}>

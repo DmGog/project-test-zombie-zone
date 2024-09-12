@@ -21,11 +21,3 @@ export const NavBar = () => {
         </nav>
     );
 };
-
-
-// <NavLink
-//     to="/dialogs"
-//     className={({ isActive }) => (isActive ? styles.act : styles.def)}
-// >
-//     Messages
-// </NavLink>

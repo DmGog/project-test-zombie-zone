@@ -1,5 +1,5 @@
 import {createBrowserRouter, Navigate, RouteObject} from "react-router-dom";
-import App from "../App";
+import App from "../app/App";
 import {Profile} from "../components/Profile/Profile";
 import {Dialogs} from "../components/Dialogs/Dialogs";
 import React from "react";
