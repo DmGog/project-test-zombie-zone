@@ -16,15 +16,14 @@ export type DialogsStateType = {
 }
 
 const dialogsInitialState = {
-    ["dialogsData"]: [
+    dialogsData: [
         {id: 1, name: "Петр"},
         {id: 2, name: "Владимир"},
         {id: 3, name: "Иосиф"},
         {id: 4, name: "Борис"},
         {id: 5, name: "Владимир"},
     ],
-
-    ["messagesData"]: [
+    messagesData: [
         {id: 1, message: "Привет"},
         {id: 2, message: "Как дела"},
         {id: 3, message: "Нормально?"},

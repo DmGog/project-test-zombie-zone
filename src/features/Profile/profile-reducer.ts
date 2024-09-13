@@ -17,8 +17,12 @@ const slice = createSlice({
     reducers: {
         setPosts(state, action: PayloadAction<{ posts: PostType[] }>) {
             return state
+        },
+        addPost(state, action: PayloadAction<{ post: string }>) {
+            return
         }
     }
 })
 
 export const profileReducer = slice.reducer
+export const {setPosts, addPost} = slice.actions

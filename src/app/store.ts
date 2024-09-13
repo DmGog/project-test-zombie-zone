@@ -1,8 +1,8 @@
 import {Action, combineReducers} from "redux";
 import {configureStore, ThunkDispatch} from "@reduxjs/toolkit";
-import {profileReducer} from "../components/Profile/profile-reducer";
+import {profileReducer} from "../features/Profile/profile-reducer";
 import {useDispatch} from "react-redux";
-import {dialogsReducer} from "../components/Dialogs/dialogs-reducer";
+import {dialogsReducer} from "../features/Dialogs/dialogs-reducer";
 
 
 const rootReducer = combineReducers({

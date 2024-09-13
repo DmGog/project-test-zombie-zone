@@ -5,6 +5,7 @@ import {Message} from "./Message/Message";
 import {useSelector} from "react-redux";
 import {AppRootState} from "../../app/store";
 import {DialogsStateType} from "./dialogs-reducer";
+import {AddNewItem} from "../../components/AddNewItem/AddNewItem";
 
 export const Dialogs = () => {
     const {dialogsData, messagesData} = useSelector<AppRootState, DialogsStateType>(state => state.dialogs)
@@ -21,6 +22,8 @@ export const Dialogs = () => {
                     return <Message key={e.id} message={e.message}/>
                 })}
             </div>
+            <AddNewItem titleButton={"add message"}/>
+
         </div>
     );
 };
