@@ -1,23 +1,43 @@
-import React, {useRef} from "react";
+import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import s from "./AddNewItem.module.css";
 
 type AddNewItemProps = {
-    titleButton:string
+    titleButton: string
+    addMessage: (message: string) => void
 }
 
-export const AddNewItem = (props:AddNewItemProps) => {
-    const {titleButton} = props;
-    const newPostElement = useRef<HTMLTextAreaElement>(null)
+export const AddNewItem = (props: AddNewItemProps) => {
+    const {titleButton, addMessage} = props;
+    const [message, setMessage] = useState("");
+    const [error, setError] = useState<string | null>(null)
     const addPost = () => {
-        if (newPostElement.current) {
-            const text = newPostElement.current.value
-            alert(text)
+        if (message.trim() !== "") {
+            addMessage(message.trim())
+            setMessage("")
+
+        } else {
+            setError("Message is required")
+        }
+    }
+    const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setMessage(e.currentTarget.value)
+        if (error) {
+            setError(null)
         }
     }
 
+    const onKeyPressHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (error !== null) {
+            setError(null)
+        }
+        if (e.charCode === 13) {
+            addPost()
+        }
+    }
     return (
         <div className={s.post_wrapper}>
-            <textarea ref={newPostElement}></textarea>
+            <textarea value={message} onChange={onChangeHandler} onKeyPress={onKeyPressHandler}></textarea>
+            {error && <div style={{color: "red", fontSize: "20px"}}>Message is required</div>}
             <div className={s.button_wrapper}>
                 <button onClick={addPost}>{titleButton}</button>
             </div>
