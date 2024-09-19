@@ -4,7 +4,7 @@ import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootState} from "../../app/store";
-import {addDialogMessage, DialogsState} from "./dialogs-slice";
+import {addDialogMessage, DialogsState} from "./dialogsSlice";
 import {AddNewItem} from "../../components/AddNewItem/AddNewItem";
 
 

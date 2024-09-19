@@ -3,12 +3,12 @@ import s from "./MyPosts.module.css"
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootState} from "../../../app/store";
 import {AddNewItem} from "../../../components/AddNewItem/AddNewItem";
-import {addPost, PostMessage} from "../profile-slice";
+import {addPost, PostMessage} from "../profileSlice";
 import {Post} from "./Post/Post";
 
 
 export const MyPosts = () => {
-    const postsData = useSelector<AppRootState, PostMessage[]>(state => state.posts)
+    const postsData = useSelector<AppRootState, PostMessage[]>(state => state.posts.postsData)
     const dispatch = useDispatch();
     const addPostMessage = (message: string) => {
         dispatch(addPost({postMessage: message}))

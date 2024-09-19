@@ -31,21 +31,18 @@ const dialogsInitialState = {
         {id: "4", message: "Нормально, не реально"},
         {id: "5", message: "так точно"},
     ]
-}
+} as DialogsState
 
 const slice = createSlice({
     name: "dialogs",
     initialState: dialogsInitialState,
     reducers: {
-        setDialogs(state, action: PayloadAction<DialogsState>) {
-            return state
-        },
         addDialogMessage(state, action: PayloadAction<{ dialogMessage: string }>) {
-            let newMessage = {id: v1(), message: action.payload.dialogMessage};
+            const newMessage = {id: v1(), message: action.payload.dialogMessage};
             state.messagesData.push(newMessage)
         }
     }
 })
 
-export const dialogsSlice = slice.reducer
+export const dialogsPageSlice = slice.reducer
 export const {addDialogMessage} = slice.actions

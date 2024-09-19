@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import s from "./AddNewItem.module.css";
+import {Button} from "../Button/Button";
 
 type AddNewItemProps = {
     titleButton: string
@@ -10,6 +11,7 @@ export const AddNewItem = (props: AddNewItemProps) => {
     const {titleButton, addMessage} = props;
     const [message, setMessage] = useState("");
     const [error, setError] = useState<string | null>(null)
+
     const addPost = () => {
         if (message.trim() !== "") {
             addMessage(message.trim())
@@ -39,7 +41,7 @@ export const AddNewItem = (props: AddNewItemProps) => {
             <textarea value={message} onChange={onChangeHandler} onKeyPress={onKeyPressHandler}></textarea>
             {error && <div style={{color: "red", fontSize: "20px"}}>Message is required</div>}
             <div className={s.button_wrapper}>
-                <button onClick={addPost}>{titleButton}</button>
+                <Button title={titleButton} onClickHandler={addPost}/>
             </div>
 
         </div>
