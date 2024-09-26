@@ -1,15 +1,15 @@
 import React from "react";
 import s from "./MyPosts.module.css"
-import {useDispatch, useSelector} from "react-redux";
-import {AppRootState} from "../../../app/store";
+import {useSelector} from "react-redux";
+import {AppRootState, useAppDispatch} from "../../../app/store";
 import {AddNewItem} from "../../../components/AddNewItem/AddNewItem";
 import {addPost, PostMessage} from "../profileSlice";
 import {Post} from "./Post/Post";
 
 
 export const MyPosts = () => {
-    const postsData = useSelector<AppRootState, PostMessage[]>(state => state.posts.postsData)
-    const dispatch = useDispatch();
+    const postsData = useSelector<AppRootState, PostMessage[]>(state => state.profilePage.postsData)
+    const dispatch = useAppDispatch();
     const addPostMessage = (message: string) => {
         dispatch(addPost({postMessage: message}))
     }

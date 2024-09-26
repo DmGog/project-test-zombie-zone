@@ -2,15 +2,15 @@ import React from "react";
 import s from "./Dialogs.module.css"
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
-import {useDispatch, useSelector} from "react-redux";
-import {AppRootState} from "../../app/store";
+import {useSelector} from "react-redux";
+import {AppRootState, useAppDispatch} from "../../app/store";
 import {addDialogMessage, DialogsState} from "./dialogsSlice";
 import {AddNewItem} from "../../components/AddNewItem/AddNewItem";
 
 
 export const Dialogs = () => {
-    const {dialogsData, messagesData} = useSelector<AppRootState, DialogsState>(state => state.dialogs)
-    const dispatch = useDispatch();
+    const {dialogsData, messagesData} = useSelector<AppRootState, DialogsState>(state => state.dialogsPage)
+    const dispatch = useAppDispatch();
     const addItemMessage = (message: string) => {
         dispatch(addDialogMessage({dialogMessage: message}))
     }

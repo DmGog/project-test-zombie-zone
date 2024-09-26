@@ -6,8 +6,8 @@ import {dialogsPageSlice} from "../features/Dialogs/dialogsSlice";
 
 
 const rootReducer = combineReducers({
-    posts: profilePageSlice,
-    dialogs: dialogsPageSlice,
+    profilePage: profilePageSlice,
+    dialogsPage: dialogsPageSlice,
 })
 
 export const store = configureStore({

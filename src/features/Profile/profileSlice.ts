@@ -4,7 +4,6 @@ import {v1} from "uuid";
 const profileInitialState = {
     postsData: [
         {id: "1", message: "Привет", likesCount: 5},
-        {id: "2", message: "Мой первый пост", likesCount: 8},
     ] as PostMessage[]
 }
 

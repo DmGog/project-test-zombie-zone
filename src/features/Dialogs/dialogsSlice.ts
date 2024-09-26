@@ -16,7 +16,7 @@ export type DialogsState = {
     messagesData: DialogMessage[];
 }
 
-const dialogsInitialState = {
+const dialogsInitialState: DialogsState = {
     dialogsData: [
         {id: "1", name: "Петр"},
         {id: "2", name: "Владимир"},
@@ -31,7 +31,7 @@ const dialogsInitialState = {
         {id: "4", message: "Нормально, не реально"},
         {id: "5", message: "так точно"},
     ]
-} as DialogsState
+}
 
 const slice = createSlice({
     name: "dialogs",
