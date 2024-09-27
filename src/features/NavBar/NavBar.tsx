@@ -10,6 +10,8 @@ export const NavBar = () => {
                 <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
                              to={PATH.PROFILE}>Profile</NavLink></li>
                 <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
+                             to={PATH.USERS}>Find users</NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
                              to={PATH.MESSAGES}>Messages</NavLink></li>
                 <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
                              to={PATH.NEWS}>News</NavLink></li>

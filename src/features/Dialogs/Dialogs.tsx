@@ -9,7 +9,8 @@ import {AddNewItem} from "../../components/AddNewItem/AddNewItem";
 
 
 export const Dialogs = () => {
-    const {dialogsData, messagesData} = useSelector<AppRootState, DialogsState>(state => state.dialogsPage)
+    const {messagesData} = useSelector<AppRootState, DialogsState>(state => state.dialogsPage)
+    const {dialogsData} = useSelector<AppRootState, DialogsState>(state => state.dialogsPage)
     const dispatch = useAppDispatch();
     const addItemMessage = (message: string) => {
         dispatch(addDialogMessage({dialogMessage: message}))

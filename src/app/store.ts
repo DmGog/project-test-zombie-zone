@@ -3,11 +3,13 @@ import {configureStore, ThunkDispatch} from "@reduxjs/toolkit";
 import {profilePageSlice} from "../features/Profile/profileSlice";
 import {useDispatch} from "react-redux";
 import {dialogsPageSlice} from "../features/Dialogs/dialogsSlice";
+import {usersPageSlice} from "../features/FindUsers/usersSlice";
 
 
 const rootReducer = combineReducers({
     profilePage: profilePageSlice,
     dialogsPage: dialogsPageSlice,
+    usersPage: usersPageSlice,
 })
 
 export const store = configureStore({

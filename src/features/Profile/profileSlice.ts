@@ -1,12 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {v1} from "uuid";
 
-const profileInitialState = {
-    postsData: [
-        {id: "1", message: "Привет", likesCount: 5},
-    ] as PostMessage[]
-}
-
 export type PostMessage = {
     id: string
     message: string
@@ -15,7 +9,11 @@ export type PostMessage = {
 
 const slice = createSlice({
     name: "posts",
-    initialState: profileInitialState,
+    initialState: {
+        postsData: [
+            {id: "1", message: "Привет", likesCount: 5},
+        ] as PostMessage[]
+    },
     reducers: {
         addPost(state, action: PayloadAction<{ postMessage: string }>) {
             const newMessage = {id: v1(), message: action.payload.postMessage, likesCount: 0}

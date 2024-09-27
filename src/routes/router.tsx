@@ -6,6 +6,7 @@ import React from "react";
 import {News} from "../features/News/News";
 import {Music} from "../features/Music/Music";
 import {Settings} from "../features/Settings/Settings";
+import {Users} from "../features/FindUsers/Users";
 
 
 export const PATH = {
@@ -13,6 +14,7 @@ export const PATH = {
     MESSAGES: "/dialogs",
     NEWS: "/news",
     MUSIC: "/music",
+    USERS: "/users",
     SETTINGS: "/settings",
 } as const
 
@@ -32,6 +34,10 @@ const publicRoutes: RouteObject[] = [
     {
         path: PATH.MUSIC,
         element: <Music/>,
+    },
+    {
+        path: PATH.USERS,
+        element: <Users/>,
     },
     {
         path: PATH.SETTINGS,
