@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./NavBar.module.css"
-import {PATH} from "../../routes/router";
+import {PATH} from "../../app/routes/router";
 import {NavLink} from "react-router-dom";
 
 export const NavBar = () => {
@@ -10,7 +10,7 @@ export const NavBar = () => {
                 <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
                              to={PATH.PROFILE}>Profile</NavLink></li>
                 <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
-                             to={PATH.USERS}>Find users</NavLink></li>
+                             to={PATH.USERS}>Users</NavLink></li>
                 <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}
                              to={PATH.MESSAGES}>Messages</NavLink></li>
                 <li><NavLink className={({isActive}) => (isActive ? s.active : s.default)}

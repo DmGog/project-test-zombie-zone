@@ -10,7 +10,7 @@ export const Header = () => {
                 alt={"logo"}/>
             <div className={s.text_wrapper}>
                 <span>social network</span>
-                <span>ZombieZone</span>
+                <span>Zombie Zone</span>
             </div>
         </header>
     );
