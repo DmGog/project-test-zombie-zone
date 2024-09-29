@@ -1,0 +1,8 @@
+.wrapperUsers{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.paginator{
+    margin-bottom: 15px;
+}

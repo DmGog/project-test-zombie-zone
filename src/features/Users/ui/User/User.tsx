@@ -4,34 +4,34 @@ import s from "./User.module.css"
 import {getRandomAvatar} from "../../model/random-avatar-user";
 
 
-type User = {
+type UserProps = {
     user: Item
     follow: (userId: number) => void
     unFollow: (userId: number) => void
 }
-export const User = (props: User) => {
-    const [avatarSrc, setAvatarSrc] = useState<string>(props.user.photos.small || getRandomAvatar());
+export const User = ({user, follow, unFollow}: UserProps) => {
+    const [avatarSrc, setAvatarSrc] = useState<string>(user.photos.small || getRandomAvatar());
 
     useEffect(() => {
 
-        if (props.user.photos.small === null) {
+        if (user.photos.small === null) {
             setAvatarSrc(getRandomAvatar());
         } else {
-            setAvatarSrc(props.user.photos.small);
+            setAvatarSrc(user.photos.small);
         }
-    }, [props.user.photos.small]);
+    }, [user.photos.small]);
 
     return (
         <div className={s.wrapperUser}>
             <div className={s.wrapperUserImgButton}>
-                <img src={avatarSrc} alt={props.user.name}/>
-                {props.user.followed
-                    ? <button className={s.unFollow} onClick={() => props.unFollow(props.user.id)}>unsubscribe</button>
-                    : <button className={s.follow} onClick={() => props.follow(props.user.id)}>subscribe</button>}
+                <img src={avatarSrc} alt={user.name}/>
+                {user.followed
+                    ? <button className={s.unFollow} onClick={() => unFollow(user.id)}>unsubscribe</button>
+                    : <button className={s.follow} onClick={() => follow(user.id)}>subscribe</button>}
             </div>
             <div className={s.wrapperInfoUser}>
-                <h2>{props.user.name}</h2>
-                <span>{props.user.status!==null?props.user.status:"IT-INCUBATOR"}</span>
+                <h2>{user.name}</h2>
+                <span>{user.status !== null ? user.status : "IT-INCUBATOR"}</span>
             </div>
         </div>
     );

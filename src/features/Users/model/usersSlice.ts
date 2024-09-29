@@ -15,21 +15,23 @@ export type Item = {
 };
 
 
-export const fetchUsers = createAsyncThunk("users/fetchUsers", async (arg, thunkAPI)=>{
-    const res = await usersAPI.getUsers()
-    return {users :res.data.items}
-})
+export const fetchUsers = createAsyncThunk(
+    "users/fetchUsers",
+    async ({page, pageSize}: { page: number; pageSize: number }, thunkAPI) => {
+        const res = await usersAPI.getUsers(page, pageSize)
+        return {users: res.data.items, totalCount: res.data.totalCount};
+    }
+);
 
 const slice = createSlice({
     name: "users",
     initialState: {
         users: [] as Item[],
+        pageSize: 6,
+        totalUsersCount: 0,
+        currentPage: 1
     },
     reducers: {
-        // setUsers(state, action: PayloadAction<{  users: Item[] }>) {
-        //     state.users = [...state.users, ...action.payload.users]
-        //
-        // },
         followUsers(state, action: PayloadAction<{ userId: number }>) {
             const user = state.users.find(user => user.id === action.payload.userId);
             if (user) {
@@ -42,14 +44,18 @@ const slice = createSlice({
                 user.followed = false;
             }
         },
+        setCurrentPage(state, action: PayloadAction<number>) {
+            state.currentPage = action.payload;
+        },
     },
     extraReducers: builder => {
         builder
             .addCase(fetchUsers.fulfilled, (state, action) => {
-                state.users = [...state.users, ...action.payload.users]
+                state.users = [...action.payload.users]
+                state.totalUsersCount = action.payload.totalCount
             })
     }
 })
 
 export const usersPageSlice = slice.reducer
-export const {followUsers, unFollowUsers} = slice.actions
+export const {followUsers, unFollowUsers, setCurrentPage} = slice.actions
