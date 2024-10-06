@@ -1,4 +1,4 @@
-import {createBrowserRouter, Navigate, RouteObject} from "react-router-dom";
+import {createBrowserRouter, HashRouter, Navigate, Route, RouteObject, Routes} from "react-router-dom";
 import App from "../App";
 import {Profile} from "../../features/Profile/Profile";
 import {Dialogs} from "../../features/Dialogs/Dialogs";
@@ -44,15 +44,30 @@ const publicRoutes: RouteObject[] = [
         element: <Settings/>,
     }
 ]
-export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App/>,
-        children: [
-            {
-                index: true,
-                element: <Navigate to={PATH.PROFILE}/>
-            }, ...publicRoutes
-        ],
-    },
-]);
+// export const router = createBrowserRouter([
+//     {
+//         path: "/",
+//         element: <App/>,
+//         children: [
+//             {
+//                 index: true,
+//                 element: <Navigate to={PATH.PROFILE}/>
+//             }, ...publicRoutes
+//         ],
+//     },
+// ]);
+//
+export const AppRouter = () => {
+    return (
+        <HashRouter>
+            <Routes>
+                <Route path="/" element={<App />}>
+                    <Route index element={<Navigate to={PATH.PROFILE} />} />
+                    {publicRoutes.map((route) => (
+                        <Route key={route.path} path={route.path} element={route.element} />
+                    ))}
+                </Route>
+            </Routes>
+        </HashRouter>
+    );
+};

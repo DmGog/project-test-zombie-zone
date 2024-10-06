@@ -30,8 +30,8 @@ export const User = ({user, follow, unFollow}: UserProps) => {
                     : <button className={s.follow} onClick={() => follow(user.id)}>subscribe</button>}
             </div>
             <div className={s.wrapperInfoUser}>
-                <h2>{user.name}</h2>
-                <span>{user.status !== null ? user.status : "IT-INCUBATOR"}</span>
+                <h2 className={s.userName}>{user.name}</h2>
+                <span className={s.userStatus}>{user.status !== null ? user.status : "IT-INCUBATOR"}</span>
             </div>
         </div>
     );

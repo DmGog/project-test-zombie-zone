@@ -51,7 +51,7 @@ const slice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchUsers.fulfilled, (state, action) => {
-                state.users = [...action.payload.users]
+                state.users = action.payload.users
                 state.totalUsersCount = action.payload.totalCount
             })
     }
