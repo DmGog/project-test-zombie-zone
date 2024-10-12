@@ -1,6 +1,6 @@
 .header {
     grid-area: h;
-    background-image: linear-gradient(47deg, rgba(255, 28, 69, 1) 0%, rgba(164, 67, 210, 1) 99%);
+    background-image: linear-gradient(47deg, rgb(99 19 85) 0%, rgba(164, 67, 210, 1) 99%);
     display: flex;
 }
 
