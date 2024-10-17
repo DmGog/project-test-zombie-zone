@@ -1,12 +1,12 @@
-import {createBrowserRouter, HashRouter, Navigate, Route, RouteObject, Routes} from "react-router-dom";
+import {HashRouter, Navigate, Route, RouteObject, Routes} from "react-router-dom";
 import App from "../App";
-import {Profile} from "../../features/Profile/Profile";
-import {Dialogs} from "../../features/Dialogs/Dialogs";
+import {Profile} from "../../pages/profile/Profile";
+import {Dialogs} from "../../pages/dialogs/Dialogs";
 import React from "react";
-import {News} from "../../features/News/News";
-import {Music} from "../../features/Music/Music";
-import {Settings} from "../../features/Settings/Settings";
-import {Users} from "../../features/Users/ui/Users";
+import {News} from "../../pages/news/News";
+import {Music} from "../../pages/music/Music";
+import {Settings} from "../../pages/settings/Settings";
+import {Users} from "../../pages/users/ui/Users";
 
 
 export const PATH = {

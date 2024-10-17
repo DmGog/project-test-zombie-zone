@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css"
-import {Header} from "../features/Header/Header";
-import {NavBar} from "../features/NavBar/NavBar";
+import {Header} from "../pages/header/Header";
+import {NavBar} from "../pages/nav-bar/NavBar";
 import {Outlet} from "react-router-dom";
 
 function App() {

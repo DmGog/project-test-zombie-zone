@@ -2,7 +2,7 @@ import React from "react";
 import s from "./MyPosts.module.css"
 import {useSelector} from "react-redux";
 import {AppRootState, useAppDispatch} from "../../../app/store";
-import {AddNewItem} from "../../../components/AddNewItem/AddNewItem";
+import {AddNewItem} from "../../../shared/ui/add-new-item/AddNewItem";
 import {addPost, PostMessage} from "../profileSlice";
 import {Post} from "./Post/Post";
 

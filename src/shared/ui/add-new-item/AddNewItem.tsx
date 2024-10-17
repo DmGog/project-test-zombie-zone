@@ -1,6 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import s from "./AddNewItem.module.css";
-import {Button} from "../Button/Button";
+import {Button} from "../button/Button";
 
 type AddNewItemProps = {
     titleButton: string

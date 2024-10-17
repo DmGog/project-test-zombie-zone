@@ -1,9 +1,9 @@
 import {Action, combineReducers} from "redux";
 import {configureStore, ThunkDispatch} from "@reduxjs/toolkit";
-import {profilePageSlice} from "../features/Profile/profileSlice";
+import {profilePageSlice} from "../pages/profile/profileSlice";
 import {useDispatch} from "react-redux";
-import {dialogsPageSlice} from "../features/Dialogs/dialogsSlice";
-import {usersPageSlice} from "../features/Users/model/usersSlice";
+import {dialogsPageSlice} from "../pages/dialogs/dialogsSlice";
+import {usersPageSlice} from "../pages/users/model/usersSlice";
 
 
 const rootReducer = combineReducers({

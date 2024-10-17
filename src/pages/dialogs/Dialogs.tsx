@@ -5,7 +5,7 @@ import {Message} from "./Message/Message";
 import {useSelector} from "react-redux";
 import {AppRootState, useAppDispatch} from "../../app/store";
 import {addDialogMessage, DialogsState} from "./dialogsSlice";
-import {AddNewItem} from "../../components/AddNewItem/AddNewItem";
+import {AddNewItem} from "../../shared/ui/add-new-item/AddNewItem";
 
 
 export const Dialogs = () => {
